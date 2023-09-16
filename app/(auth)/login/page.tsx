@@ -48,7 +48,7 @@ const Page = () => {
   };
 
   return (
-    <Card className='w-[350px] bg-cream2 border-orange border-[3px] rounded-sm'>
+    <Card className='w-[350px] rounded-sm cream-card'>
       <CardHeader>
         <CardTitle>Sing In</CardTitle>
         <CardDescription className='text-red'>Gladiatus Clone</CardDescription>

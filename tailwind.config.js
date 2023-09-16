@@ -22,6 +22,7 @@ module.exports = {
         red2: "#8a5151",
         cream2: "#eed7a1",
         cream: "#f7efd3",
+        gold: "#e6b749",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -74,3 +74,76 @@
     @apply bg-background text-foreground;
   }
 }
+
+.loader {
+	border-top-color: #974342;
+	-webkit-animation: spinner 1.5s linear infinite;
+	animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.cream-card {
+  outline: 3px solid #eed7a1;
+  background-color: #eed7a1;
+  border: 3px solid #cd8b62;
+}
+
+.main-cream-card {
+  outline: 3px solid #eed7a1;
+  background-color: #eed7a1;
+  border-left: 3px solid #cd8b62;
+  border-right: 3px solid #cd8b62;
+}
+
+.orange-card {
+  outline: 3px solid #cd8b62;
+  background-color: #cd8b62;
+  border: 3px solid #eed7a1;
+}
+
+.red-card {
+  outline: 3px solid #974342;
+  background-color: #974342;
+  border: 3px solid #eed7a1;
+}
+
+.main-red-card {
+  outline: 3px solid #974342;
+  background-color: #974342;
+  border-left: 3px solid #eed7a1;
+  border-right: 3px solid #eed7a1;
+}
+
+.nav-banner-active {
+  color: #e6b749;
+  border: 3px solid #e6b749;
+}
+
+.red-nav {
+  outline: 3px solid #974342;
+}
+
+.footer {
+  outline: 3px solid #cd8b62;
+  background-color: #cd8b62;
+  border-left: 3px solid #eed7a1;
+  border-top: 3px solid #eed7a1;
+  border-right: 3px solid #eed7a1;
+}
