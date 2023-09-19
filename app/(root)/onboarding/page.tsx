@@ -52,17 +52,22 @@ const Page = () => {
   return (
     <div className='mt-16 mb-4 flex flex-col items-center gap-6 px-10'>
       <div className='flex flex-col items-center gap-4'>
-        <h2 className='font-semibold text-lg red-card flex justify-center items-center text-cream2 h-10 px-4'>
-            Gladiatus Clone
-        </h2>
-        <p className='orange-card p-2 text-crea2'>
-        After a long and arduous journey, fleeing through foreign lands from a war that threatened your home, you manage to reach the domains of Balenos where an outpost halts you and attempts to ascertain your identity.
-        </p>
+        <h1 className='text-xl w-full font-bold border-b-[3px] border-red text-center text-red'>
+          Gladiatus Clone
+        </h1>
+        <div className='w-full info-card mt-4'>
+          <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2'>
+            A new beginning
+          </h2>
+          <p className='text-sm px-2 py-1'>
+          After a long and arduous journey, fleeing through foreign lands from a war that threatened your home, you manage to reach the domains of Balenos where an outpost halts you and attempts to ascertain your identity.
+          </p>
+        </div>
       </div>
-      <div className='flex flex-col gap-4 items-center'>
-        <h2 className='font-semibold text-lg red-card flex justify-center items-center text-cream2 h-10 px-4'>
+      <div className='flex flex-col gap-4 items-center w-full'>
+        <h1 className='text-xl w-full font-bold border-b-[3px] border-red text-center text-red'>
           How do you wish to be known in this domains
-        </h2>
+        </h1>
         <Input
           className='bg-cream p-2 rounded-sm w-[50%] border-none'
           placeholder='Enter your name...'
@@ -70,11 +75,11 @@ const Page = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div className='flex gap-4 flex-col'>
-        <h2 className='font-semibold text-lg red-card flex justify-center items-center text-cream2 h-10 px-4'>
+      <div className='flex gap-4 flex-col w-full'>
+        <h1 className='text-xl w-full font-bold border-b-[3px] border-red text-center text-red'>
           Choose your gender
-        </h2>
-        <div className='flex flex-row gap-4'>
+        </h1>
+        <div className='flex flex-row gap-4 justify-center'>
           <div>
             <Image 
               src={'/characters/male.jpg'}

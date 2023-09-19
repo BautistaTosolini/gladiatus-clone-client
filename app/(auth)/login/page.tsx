@@ -37,7 +37,7 @@ const Page = () => {
       password,
     };
     
-    await axios.post(`${BASE_API_URL}/users/login`, payload, { withCredentials: true })
+    await axios.post(`${BASE_API_URL}/users/session`, payload, { withCredentials: true })
       .then((response) => {
         router.push('/home');
       })

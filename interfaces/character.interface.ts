@@ -11,6 +11,8 @@ export interface CharacterInterface {
   agility: number;
   endurance: number;
   strength: number;
+  intelligence: number;
+  charisma: number;
   onboarded: boolean;
   gender: 'male' | 'female';
 }

@@ -110,6 +110,7 @@
   background-color: #eed7a1;
   border-left: 3px solid #cd8b62;
   border-right: 3px solid #cd8b62;
+  background-image: linear-gradient(to top, #bda264, 20%, #eed7a1);
 }
 
 .orange-card {
@@ -124,11 +125,18 @@
   border: 3px solid #eed7a1;
 }
 
+.green-card {
+  outline: 3px solid #003805;
+  background-color: #003805;
+  border: 3px solid #eed7a1;
+}
+
 .main-red-card {
   outline: 3px solid #974342;
   background-color: #974342;
   border-left: 3px solid #eed7a1;
   border-right: 3px solid #eed7a1;
+  background-image: linear-gradient(to top, #63302f, 20%, #974342);
 }
 
 .nav-banner-active {
@@ -146,4 +154,14 @@
   border-left: 3px solid #eed7a1;
   border-top: 3px solid #eed7a1;
   border-right: 3px solid #eed7a1;
+}
+
+.orange-gradient {
+  background-image: linear-gradient(to top, #9e6b4c 10%, #cd8b62);
+}
+
+.info-card {
+  background-color: #eedfb8;
+  outline: 3px solid #eedfb8;
+  border: 3px solid #eed7a1;
 }

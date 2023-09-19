@@ -23,7 +23,7 @@ const NavigationBanner = () => {
 
   const surroundingsRoutes = [
     {
-      name: 'Grimwood',
+      name: 'Grimwood Forest',
       link: '/grimwood',
     },
     {
@@ -46,7 +46,7 @@ const NavigationBanner = () => {
 
         return (
           <div 
-            className={`red-card text-cream2 text-center font-semibold text-lg cursor-pointer hover:text-gold hover:border-gold transition rounded-sm ${isActive && 'nav-banner-active'}`}
+            className={`red-card text-cream2 text-center font-semibold text-md cursor-pointer hover:text-gold hover:border-gold transition rounded-sm ${isActive && 'nav-banner-active'}`}
             key={route.name}
             onClick={() => router.push(route.link)}
           >
@@ -55,14 +55,14 @@ const NavigationBanner = () => {
         )
       })}
       <h2 className='border-b-cream2 border-b-[3px] text-center font-semibold text-cream2 text-lg'>
-        Surroundings
+        World
       </h2>
       {surroundingsRoutes.map((route) => {
         const isActive = (pathname.includes(route.link) && route.link.length > 1) || (pathname === route.link);
 
         return (
           <div 
-            className={`red-card text-cream2 text-center font-semibold text-lg cursor-pointer hover:text-gold hover:border-gold transition rounded-sm ${isActive && 'nav-banner-active'}`}
+            className={`red-card text-cream2 text-center font-semibold text-md cursor-pointer hover:text-gold hover:border-gold transition rounded-sm ${isActive && 'nav-banner-active'}`}
             key={route.name}
             onClick={() => router.push(route.link)}
           >

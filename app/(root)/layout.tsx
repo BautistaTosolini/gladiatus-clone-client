@@ -37,15 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           setUser(user);
 
-          console.log(user)
-
           if (!user) {
             return router.push('/');
           }
         
           if (!user.character.onboarded) {
             setIsLoading(false);
-            return router.push('/onboard');
+            return router.push('/onboarding');
           }
 
           setIsLoading(false);
@@ -65,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div className='w-full flex justify-center min-h-screen bg-cover' style={{ backgroundImage: 'url("/bg-image.jpg")' }}>
+        <div className='w-full flex justify-center min-h-screen bg-cover bg-center bg-no-repeat' style={{ backgroundImage: 'url("/bg-image.jpg")' }}>
           <Toaster
             toastOptions={{
               className: '',
@@ -81,10 +79,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className='w-full h-min-full flex flex-row justify-center gap-6'>
               <NavigationBanner />
               <div className='flex flex-col items-center h-min-full'>
-                <div className='h-min-full main-cream-card w-[780px] flex-grow'>
+                <div className='h-min-full main-cream-card w-[680px] flex-grow'>
                   {children}
                 </div>
-                <div className='footer w-[800px] h-[50px]' />
+                <div className='footer w-[700px] h-[50px] orange-gradient' />
               </div>
             </div>
           </UserContext.Provider>
