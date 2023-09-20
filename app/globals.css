@@ -100,13 +100,13 @@
 }
 
 .cream-card {
-  outline: 3px solid #eed7a1;
+  outline: 2px solid #eed7a1;
   background-color: #eed7a1;
   border: 3px solid #cd8b62;
 }
 
 .main-cream-card {
-  outline: 3px solid #eed7a1;
+  outline: 2px solid #eed7a1;
   background-color: #eed7a1;
   border-left: 3px solid #cd8b62;
   border-right: 3px solid #cd8b62;
@@ -114,25 +114,25 @@
 }
 
 .orange-card {
-  outline: 3px solid #cd8b62;
+  outline: 2px solid #cd8b62;
   background-color: #cd8b62;
   border: 3px solid #eed7a1;
 }
 
 .red-card {
-  outline: 3px solid #974342;
+  outline: 2px solid #974342;
   background-color: #974342;
   border: 3px solid #eed7a1;
 }
 
 .green-card {
-  outline: 3px solid #003805;
+  outline: 2px solid #003805;
   background-color: #003805;
   border: 3px solid #eed7a1;
 }
 
 .main-red-card {
-  outline: 3px solid #974342;
+  outline: 2px solid #974342;
   background-color: #974342;
   border-left: 3px solid #eed7a1;
   border-right: 3px solid #eed7a1;
@@ -145,11 +145,11 @@
 }
 
 .red-nav {
-  outline: 3px solid #974342;
+  outline: 2px solid #974342;
 }
 
 .footer {
-  outline: 3px solid #cd8b62;
+  outline: 2px solid #cd8b62;
   background-color: #cd8b62;
   border-left: 3px solid #eed7a1;
   border-top: 3px solid #eed7a1;
@@ -162,6 +162,12 @@
 
 .info-card {
   background-color: #eedfb8;
-  outline: 3px solid #eedfb8;
+  outline: 2px solid #eedfb8;
   border: 3px solid #eed7a1;
+}
+
+.fight-button {
+  background-color: #e6b749;
+  outline: 2px solid #e6b749;
+  border: 2px solid #eedfb8;
 }

@@ -30,7 +30,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
   }
 
   return (
-      <div className='orange-card w-38 flex flex-col items-center p-2 gap-2 drop-shadow-lg z-[998]'>
+      <div className='w-38 flex flex-col items-center gap-2 drop-shadow-lg z-[998]'>
         <h2 className='red-card text-center font-semibold text-cream2 w-full'>
           {enemy.name}
         </h2>
@@ -38,7 +38,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
           <HoverCard closeDelay={150}>
             <HoverCardTrigger asChild>
               <Image 
-                src={`/enemies/grimwood/${enemy.image}.jpg`}
+                src={`/enemies/${zone}/${enemy.image}.jpg`}
                 width={135}
                 height={156}
                 alt={enemy.image}
@@ -108,7 +108,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
           </HoverCard>
         </div>
         <Button
-          className='w-full h-9 bg-red text-cream2 font-semibold hover:bg-red2'
+          className='fight-button text-black w-full h-7 font-semibold hover:brightness-110 hover:bg-gold'
           onClick={onClick}
         >
           Fight

@@ -1,5 +1,13 @@
-import Image from "next/image";
-import StatBar from "../shared/StatBar";
+import Image from 'next/image';
+import StatBar from '@/components/shared/StatBar';
+
+function roundDownToNearestMultipleOf10(level: number): number {
+  if (level > 80) return 80;
+
+  const nearestMultipleOf10 = Math.floor(level / 10) * 10;
+  return nearestMultipleOf10;
+}
+
 
 interface FighterCardProps {
   name: string;
@@ -23,7 +31,7 @@ const FighterCard = ({ name, level, strength, endurance, dexterity, agility, int
       </h2>
       <Image 
         className='drop-shadow-xl'
-        src={isEnemy ? `/enemies/${zone}/${image}.jpg` : `/characters/${image}.jpg`}
+        src={isEnemy ? `/enemies/${zone}/${image}.jpg` : `/characters/${image}/character-lvl${roundDownToNearestMultipleOf10(level)}.jpg`}
         width={180}
         height={207}
         alt='character'

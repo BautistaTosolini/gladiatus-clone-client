@@ -50,6 +50,15 @@ const Page = () => {
           <p className='text-sm px-2 py-1'>
             Within the city&apos;s barracks, you can observe robust soldiers training, who are willing to impart their skills in exchange for a generous sum of crowns.
           </p>
+          <p className='text-sm px-2 py-1 flex items-center gap-1'>
+            Your balance: {character.crowns} 
+            <Image 
+              src={'/images/crowns.png'}
+              width={12}
+              height={12}
+              alt='crowns'
+            />
+          </p>
         </div>
       </div>
       <div className='orange-card flex flex-col text-sm'>

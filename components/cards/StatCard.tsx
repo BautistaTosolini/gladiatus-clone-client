@@ -26,7 +26,7 @@ const StatCard = ({ statName, statValue, crowns, onClick, characterCrowns, last 
         />
       </div>
       <div 
-        className={`bg-gold border-[2px] border-cream text-xl w-6 h-6 flex items-center ml-2 justify-center text-[#003805] font-bold cursor-pointer hover:brightness-100 ${characterCrowns < crowns && 'brightness-50 hover:brightness-50'}`}
+        className={`bg-gold border-[2px] border-cream text-[20px] w-6 h-6 flex items-center ml-2 justify-center text-[#003805] font-bold cursor-pointer hover:brightness-110 ${characterCrowns < crowns && 'brightness-50 hover:brightness-50 cursor-default'}`}
         onClick={characterCrowns < crowns ? () => toast.error('Not enough crowns') : onClick}
       >
         +

@@ -2,6 +2,13 @@ import Image from 'next/image';
 import StatBar from '@/components/shared/StatBar';
 import { CharacterInterface } from '@/interfaces/character.interface';
 
+function roundDownToNearestMultipleOf10(level: number): number {
+  if (level > 80) return 80;
+
+  const nearestMultipleOf10 = Math.floor(level / 10) * 10;
+  return nearestMultipleOf10;
+}
+
 const CharacterCard = ({ character }: { character: CharacterInterface }) => {
   return (
     <div className='flex flex-col w-[185px] gap-3 items-center'>
@@ -10,7 +17,7 @@ const CharacterCard = ({ character }: { character: CharacterInterface }) => {
       </h2>
       <Image 
         className='drop-shadow-xl'
-        src={`/characters/${character.gender}.jpg`}
+        src={`/characters/${character.gender}/character-lvl${roundDownToNearestMultipleOf10(character.level)}.jpg`}
         width={180}
         height={207.86}
         alt='character'
