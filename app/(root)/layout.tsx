@@ -79,10 +79,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className='w-full h-min-full flex flex-row justify-center gap-6'>
               <NavigationBanner />
               <div className='flex flex-col items-center h-min-full'>
-                <div className='h-min-full main-cream-card w-[680px] flex-grow'>
+                <div className='h-min-full main-cream-card w-[620px] flex-grow'>
                   {children}
                 </div>
-                <div className='footer w-[700px] h-[50px] orange-gradient' />
+                <div className='footer w-[640px] h-[50px] orange-gradient' />
               </div>
             </div>
           </UserContext.Provider>

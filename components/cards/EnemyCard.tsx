@@ -18,7 +18,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
   const router = useRouter();
 
   const onClick = async () => {
-    await axios.post(`${BASE_API_URL}/characters/battle?zone=${zone}&enemy=${enemy.image}`, {}, { withCredentials: true, headers: { 'journal': 'true' } })
+    await axios.post(`${BASE_API_URL}/characters/battle?zone=${zone}&enemy=${enemy.image}`, {}, { withCredentials: true })
       .then((response) => {
         const battleReport = response.data;
 

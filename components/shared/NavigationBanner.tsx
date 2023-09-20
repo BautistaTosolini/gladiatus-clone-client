@@ -4,7 +4,7 @@ const NavigationBanner = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const isOnboard = pathname === '/onboard';
+  const isOnboard = pathname === '/onboarding';
 
   const villageRoutes = [
     {

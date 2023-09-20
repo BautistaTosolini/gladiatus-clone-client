@@ -15,7 +15,7 @@ const Page = () => {
 
   useEffect(() => {
     const fetchEnemies = async () => {
-      await axios.get(`${BASE_API_URL}/characters/enemy?zone=grimwood`, { withCredentials: true, headers: { journal: 'true' } })
+      await axios.get(`${BASE_API_URL}/characters/enemy?zone=grimwood`, { withCredentials: true })
         .then((response) => {
           const enemies = response.data;
 
