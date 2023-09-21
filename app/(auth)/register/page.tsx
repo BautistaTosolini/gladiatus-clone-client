@@ -45,8 +45,8 @@ const Page = () => {
     };
     
     await axios.post(`${BASE_API_URL}/users`, payload, { withCredentials: true })
-      .then((response) => {
-        router.push('/home');
+      .then(() => {
+        router.push('/overview');
       })
       .catch((error) => {
         setSubmiting(false);

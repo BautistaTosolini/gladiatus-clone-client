@@ -1,13 +1,13 @@
 'use client';
 
-import { EnemyInterface } from "@/interfaces/enemy.interface"
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@radix-ui/react-hover-card"
-import Image from "next/image"
-import { Button } from "../ui/button"
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { BASE_API_URL } from "@/constants";
+import { EnemyInterface } from '@/interfaces/enemy.interface'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@radix-ui/react-hover-card'
+import Image from 'next/image'
+import { Button } from '../ui/button'
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { BASE_API_URL } from '@/constants';
 
 interface EnemyCardProps {
   enemy: EnemyInterface;
@@ -45,59 +45,59 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
               />
             </HoverCardTrigger>
             <HoverCardContent>
-              <div className='red-card flex flex-col min-w-[160px] px-2'>
-                <span className='font-semibold text-cream2'>
+              <div className='red-card flex flex-col min-w-[130px] px-2 text-cream2 text-xs'>
+                <span className='font-semibold text-sm'>
                   {enemy.name}
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Level:
                   <span>
                     {enemy.level ? `${enemy.level[0]} - ${enemy.level[enemy.level.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Experience:
                   <span>
                     {enemy.xp ? `${enemy.xp[0]} - ${enemy.xp[enemy.xp.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Crowns:
                   <span>
                     {enemy.crowns ? `${enemy.crowns[0]} - ${enemy.crowns[enemy.crowns.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Strength:
                   <span>
                     {enemy.strength ? `${enemy.strength[0]} - ${enemy.strength[enemy.strength.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Endurance:
                   <span>
                     {enemy.endurance ? `${enemy.endurance[0]} - ${enemy.endurance[enemy.endurance.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Dexterity:
                   <span>
                     {enemy.dexterity ? `${enemy.dexterity[0]} - ${enemy.dexterity[enemy.dexterity.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Agility:
                   <span>
                     {enemy.agility ? `${enemy.agility[0]} - ${enemy.agility[enemy.agility.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Intelligence:
                   <span>
                     {enemy.intelligence ? `${enemy.intelligence[0]} - ${enemy.intelligence[enemy.intelligence.length - 1]}` : '?'}
                   </span>
                 </span>
-                <span className='flex justify-between text-cream2 text-sm'>
+                <span className='flex justify-between'>
                   Charisma:
                   <span>
                     {enemy.charisma ? `${enemy.charisma[0]} - ${enemy.charisma[enemy.charisma.length - 1]}` : '?'}
@@ -108,7 +108,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
           </HoverCard>
         </div>
         <Button
-          className='fight-button text-black w-full h-7 font-semibold hover:brightness-110 hover:bg-gold'
+          className='fight-button w-full h-7 font-semibold hover:brightness-110 hover:bg-brown text-brown2'
           onClick={onClick}
         >
           Fight

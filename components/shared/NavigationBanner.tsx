@@ -8,16 +8,16 @@ const NavigationBanner = () => {
 
   const villageRoutes = [
     {
-      name: 'Home',
-      link: '/home',
+      name: 'Overview',
+      link: '/overview',
     },
     {
       name: 'Barracks',
       link: '/barracks',
     },
     {
-      name: 'Market',
-      link: '/market',
+      name: 'Highscore',
+      link: '/highscore',
     },
   ]
 
@@ -39,7 +39,7 @@ const NavigationBanner = () => {
   return (
     <div className={`min-h-full w-[200px] main-red-card pt-14 flex flex-col gap-2 px-1 ${isOnboard && 'hidden'}`}>
       <h2 className='border-b-cream2 border-b-[3px] text-center font-semibold text-cream2 text-lg'>
-        Village
+        General
       </h2>
       {villageRoutes.map((route) => {
         const isActive = (pathname.includes(route.link) && route.link.length > 1) || (pathname === route.link);

@@ -39,7 +39,7 @@ const Page = () => {
     
     await axios.post(`${BASE_API_URL}/users/session`, payload, { withCredentials: true })
       .then((response) => {
-        router.push('/home');
+        router.push('/overview');
       })
       .catch((error) => {
         setSubmiting(false);

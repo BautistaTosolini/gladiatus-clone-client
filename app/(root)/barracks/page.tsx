@@ -9,6 +9,7 @@ import axios from 'axios';
 import { BASE_API_URL } from '@/constants';
 import toast from 'react-hot-toast';
 import StatCard from '@/components/cards/StatCard';
+import DescriptionCard from '@/components/cards/DescriptionCard';
 
 const calculateCrowns = (stat: number) => Math.pow(stat, 2) + stat + 1;
 
@@ -43,14 +44,13 @@ const Page = () => {
           src={`/images/barracks.jpg`}
           alt='barrakcs'
         />
-        <div className='w-full info-card my-1'>
-          <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2'>
-            Barracks
-          </h2>
-          <p className='text-sm px-2 py-1'>
+        <DescriptionCard
+          title='Barracks'
+        >
+          <p>
             Within the city&apos;s barracks, you can observe robust soldiers training, who are willing to impart their skills in exchange for a generous sum of crowns.
           </p>
-          <p className='text-sm px-2 py-1 flex items-center gap-1'>
+          <p className='flex items-center gap-1'>
             Your balance: {character.crowns} 
             <Image 
               src={'/images/crowns.png'}
@@ -59,9 +59,9 @@ const Page = () => {
               alt='crowns'
             />
           </p>
-        </div>
+        </DescriptionCard>
       </div>
-      <div className='orange-card flex flex-col text-sm'>
+      <div className='brown-card flex flex-col text-sm rounded-sm'>
 
         <StatCard 
           statName='Strength'

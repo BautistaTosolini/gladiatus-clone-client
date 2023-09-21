@@ -106,11 +106,11 @@
 }
 
 .main-cream-card {
-  outline: 2px solid #eed7a1;
-  background-color: #eed7a1;
+  outline: 2px solid #d4cc9c;
+  background-color: #d4cc9c;
   border-left: 3px solid #cd8b62;
   border-right: 3px solid #cd8b62;
-  background-image: linear-gradient(to top, #bda264, 20%, #eed7a1);
+  background-image: linear-gradient(to top, #bda264, 1%, #eed7a1);
 }
 
 .orange-card {
@@ -157,17 +157,29 @@
 }
 
 .orange-gradient {
-  background-image: linear-gradient(to top, #9e6b4c 10%, #cd8b62);
+  background-image: linear-gradient(to top, #9e6b4c 1%, #cd8b62);
 }
 
 .info-card {
   background-color: #eedfb8;
   outline: 2px solid #eedfb8;
   border: 3px solid #eed7a1;
+  background-image: linear-gradient(to bottom, #eed7a1 1%, #eedfb8);
 }
 
 .fight-button {
-  background-color: #e6b749;
-  outline: 2px solid #e6b749;
+  background-color: #b59964;
+  outline: 2px solid #b59964;
   border: 2px solid #eedfb8;
+}
+
+.brown-card {
+  background-color: #b59964;
+  outline: 2px solid #b59964;
+  border: 3px solid #eed7a1;
+}
+
+.background-main-image {
+  background: #191513 url("/images/bg-image.jpg") no-repeat scroll 10% 40px;
+  background-size: 100%;
 }

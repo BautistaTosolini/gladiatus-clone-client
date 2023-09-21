@@ -22,7 +22,7 @@ const Page = () => {
   }
 
   if (user.character.onboarded) {
-    return router.push('/home');
+    return router.push('/overview');
   }
 
   const onClick = async () => {
@@ -42,7 +42,7 @@ const Page = () => {
     await axios.put(`${BASE_API_URL}/characters`, payload, { withCredentials: true })
       .then(() => {
         toast.success('Character created')
-        router.push('/home');
+        router.push('/overview');
       })
       .catch((error) => {
         toast.error(error.response.data.message);
