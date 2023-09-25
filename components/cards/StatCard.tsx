@@ -29,8 +29,8 @@ const StatCard = ({ statName, statValue, crowns, onClick, characterCrowns, last 
           />
         </div>
         <div 
-          className={`cursor-pointer hover:brightness-110 ml-2 ${!canTrain && 'hover:brightness-95 cursor-not-allowed'}`}
-          onClick={!canTrain ? () => toast.error('Not enough crowns') : onClick}
+          className={`${canTrain ? 'cursor-pointer hover:brightness-110 ml-2' : ''}`}
+          onClick={!canTrain ? () => {} : onClick}
         >
           <Image
             src={`${canTrain ? '/images/train.jpg' : '/images/cant-train.jpg'}`}

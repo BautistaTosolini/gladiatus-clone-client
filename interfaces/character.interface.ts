@@ -15,4 +15,6 @@ export interface CharacterInterface {
   charisma: number;
   onboarded: boolean;
   gender: 'male' | 'female';
+  honour: number;
+  power: number;
 }

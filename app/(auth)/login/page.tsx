@@ -37,9 +37,9 @@ const Page = () => {
       password,
     };
     
-    await axios.post(`${BASE_API_URL}/users/session`, payload, { withCredentials: true })
+    await axios.post(`${BASE_API_URL}/api/users/session`, payload, { withCredentials: true })
       .then((response) => {
-        router.push('/overview');
+        router.push('/general/overview');
       })
       .catch((error) => {
         setSubmiting(false);
@@ -97,14 +97,14 @@ const Page = () => {
 
             <div className='flex justify-center gap-4'>
               <Button
-                className='w-40 bg-red text-black hover:bg-red2'
+                className='w-40 bg-red text-cream2 font-semibold hover:bg-red2'
                 onClick={() => router.push('/')}
               >
                 Return
               </Button>
               <Button 
                 type={submiting ? 'button' : 'submit'} 
-                className={`w-40 ${submiting ? 'cursor-progress' : ''} bg-red text-black hover:bg-red2`}
+                className={`w-40 ${submiting ? 'cursor-progress' : ''} bg-red text-cream2 font-semibold hover:bg-red2`}
               >
                 {submiting ? 'Loading...' : 'Send'}
               </Button>

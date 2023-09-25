@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 import { UserContext } from '@/app/(root)/layout';
-import axios from 'axios';
 import { BASE_API_URL } from '@/constants';
-import toast from 'react-hot-toast';
 import StatCard from '@/components/cards/StatCard';
 import DescriptionCard from '@/components/cards/DescriptionCard';
 
@@ -24,7 +24,7 @@ const Page = () => {
   }
 
   const onClick = async (stat: string) => {
-    await axios.put(`${BASE_API_URL}/characters/${stat}`, {}, { withCredentials: true })
+    await axios.put(`${BASE_API_URL}/api/characters/${stat}`, {}, { withCredentials: true })
       .then((response) => {
         const updatedCharacter = response.data;
 
@@ -36,7 +36,7 @@ const Page = () => {
   }
 
   return (
-    <div className='w-full mt-16 px-4 gap-4 flex flex-col'>
+    <div className='w-full mt-16 px-8 gap-4 flex flex-col'>
       <div className='flex gap-4'>
         <Image 
           width={168}
@@ -45,7 +45,7 @@ const Page = () => {
           alt='barrakcs'
         />
         <DescriptionCard
-          title='Barracks'
+          title='Training'
         >
           <p>
             Within the city&apos;s barracks, you can observe robust soldiers training, who are willing to impart their skills in exchange for a generous sum of crowns.

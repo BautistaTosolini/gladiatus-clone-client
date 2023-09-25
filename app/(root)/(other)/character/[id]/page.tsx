@@ -23,11 +23,9 @@ const Page = ({ params }: { params: { id: string } }) => {
     const id = params.id;
 
     const fetchBattleReport = async () => {
-      await axios.get(`${BASE_API_URL}/characters/${id}`, { withCredentials: true })
+      await axios.get(`${BASE_API_URL}/api/characters/${id}`, { withCredentials: true })
         .then((response) => {
           const character = response.data;
-
-          console.log(character)
 
           setCharacter(character);
           setIsLoading(false);
@@ -47,7 +45,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   if (!character) {
     return (
       <div className='px-4'>
-        <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2 mt-16 info-card'>
+        <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2 mt-16 info-card text-brown2'>
           No results
         </h2>
       </div>
@@ -56,7 +54,7 @@ const Page = ({ params }: { params: { id: string } }) => {
 
 
   return (
-    <div className='w-full mt-16 px-4 flex flex-col'>
+    <div className='w-full mt-16 px-8 flex flex-col'>
       <div className='flex'>
         <CharacterCard
           character={character}

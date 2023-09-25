@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     const authenticateUser = async () => {
-      await axios.get(`${BASE_API_URL}/users`, { withCredentials: true })
+      await axios.get(`${BASE_API_URL}/api/users`, { withCredentials: true })
         .then((response) => {
           const user = response.data;
 

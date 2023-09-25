@@ -16,14 +16,14 @@ const Page = () => {
 
   useEffect(() => {
     const fetchEnemies = async () => {
-      await axios.get(`${BASE_API_URL}/characters/enemy?zone=crypt`, { withCredentials: true })
+      await axios.get(`${BASE_API_URL}/api/characters/enemy?zone=crypt`, { withCredentials: true })
         .then((response) => {
           const enemies = response.data;
 
           setEnemies(enemies);
         })
         .catch(() => {
-          router.push('/overview')
+          router.push('/general/overview')
         });
     }
 
@@ -36,7 +36,7 @@ const Page = () => {
 
   return (
     <div className='w-full mt-16 px-4 flex flex-col gap-4'>
-        <h1 className='text-xl font-bold border-b-[3px] border-red text-center text-red'>
+        <h1 className='text-xl font-bold border-b-[3px] border-brown2 text-center text-brown2'>
           Ancient Crypt
         </h1>
         <div className='flex flex-row gap-4'>

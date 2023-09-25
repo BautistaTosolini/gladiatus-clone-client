@@ -8,8 +8,8 @@ import axios from 'axios';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { UserContext } from '../layout'
 import { BASE_API_URL } from '@/constants';
+import { UserContext } from '@/app/(root)/layout';
 
 const Page = () => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const Page = () => {
   }
 
   if (user.character.onboarded) {
-    return router.push('/overview');
+    return router.push('/general/overview');
   }
 
   const onClick = async () => {
@@ -39,10 +39,10 @@ const Page = () => {
       name,
     }
 
-    await axios.put(`${BASE_API_URL}/characters`, payload, { withCredentials: true })
+    await axios.put(`${BASE_API_URL}/api/characters`, payload, { withCredentials: true })
       .then(() => {
         toast.success('Character created')
-        router.push('/overview');
+        router.push('/general/overview');
       })
       .catch((error) => {
         toast.error(error.response.data.message);

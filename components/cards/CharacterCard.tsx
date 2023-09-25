@@ -103,11 +103,20 @@ const CharacterCard = ({ character }: { character: CharacterInterface }) => {
           </div>
         </div>
 
-        <div className='border-cream2 px-2'>
+        <div className='border-cream2 px-2 border-b-[2px]'>
           <div className='flex justify-between text-sm'>
             Charisma:
             <span className='flex justify-center items-center font-semibold gap-2 text-red3'>
               {character.charisma}
+            </span>
+          </div>
+        </div>
+
+        <div className='border-cream2 px-2'>
+          <div className='flex justify-between text-sm'>
+            Total Power:
+            <span className='flex justify-center items-center font-semibold gap-2 text-red3'>
+              {character.power}
             </span>
           </div>
         </div>
