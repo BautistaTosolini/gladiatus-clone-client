@@ -24,7 +24,7 @@ const Page = () => {
   }
 
   const onClick = async (stat: string) => {
-    await axios.put(`${BASE_API_URL}/api/characters/${stat}`, {}, { withCredentials: true })
+    await axios.put(`${BASE_API_URL}/api/characters/train`, { stat }, { withCredentials: true })
       .then((response) => {
         const updatedCharacter = response.data;
 

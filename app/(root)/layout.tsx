@@ -33,18 +33,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           setUser(user);
 
           if (!user) {
-            return router.push('/');
+            router.push('/');
+            return null;
           }
         
           if (!user.character.onboarded) {
             setIsLoading(false);
-            return router.push('/onboarding');
+            router.push('/onboarding');
+            return null;
           }
 
           setIsLoading(false);
         })
         .catch(() => {
           router.push('/');
+          return null;
         })
     }
 
@@ -57,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={`${inter.className} main-container`}>
         <div className='w-full flex justify-center min-h-screen background-main-image'>
           <Toaster
             toastOptions={{

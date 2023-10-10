@@ -35,7 +35,7 @@ const EnemyCard = ({ enemy, zone }: EnemyCardProps) => {
           {enemy.name}
         </h2>
         <div>
-          <HoverCard closeDelay={150}>
+          <HoverCard closeDelay={0}>
             <HoverCardTrigger asChild>
               <Image 
                 src={`/enemies/${zone}/${enemy.image}.jpg`}

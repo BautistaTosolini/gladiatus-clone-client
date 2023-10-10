@@ -99,6 +99,11 @@
 	}
 }
 
+.main-container {
+  overflow-y: scroll;
+  position: relative;
+}
+
 .cream-card {
   outline: 2px solid #eed7a1;
   background-color: #eed7a1;

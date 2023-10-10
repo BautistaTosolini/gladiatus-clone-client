@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { CharacterInterface } from '@/interfaces/character.interface';
+import { calculatePower } from '@/lib/utils/calculatePower';
 
 function roundDownToNearestMultipleOf10(level: number): number {
   if (level > 80) return 80;
@@ -12,8 +13,8 @@ const CharacterCard = ({ character }: { character: CharacterInterface }) => {
   const nextLevelExperience = (10 * (character.level + 1 ) - 5) - 10;
 
   return (
-    <div className='flex flex-col w-[168px] gap-3 items-center'>
-      <h2 className='font-semibold text-md red-card flex justify-center items-center text-cream2 h-10 px-4 w-full drop-shadow-xl'>
+    <div className='flex flex-col w-[168px] min-w-[168px] gap-3 items-center'>
+      <h2 className='font-semibold text-md red-card flex justify-center items-center text-cream2 h-10 px-4 w-full drop-shadow-xl truncate'>
         {character.name}
       </h2>
       <Image 
@@ -116,7 +117,7 @@ const CharacterCard = ({ character }: { character: CharacterInterface }) => {
           <div className='flex justify-between text-sm'>
             Total Power:
             <span className='flex justify-center items-center font-semibold gap-2 text-red3'>
-              {character.power}
+              {calculatePower(character)}
             </span>
           </div>
         </div>

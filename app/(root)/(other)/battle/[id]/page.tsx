@@ -14,6 +14,8 @@ import formatDateTime from '@/lib/utils/formatDateTime';
 import { CharacterInterface } from '@/interfaces/character.interface';
 import DescriptionCard from '@/components/cards/DescriptionCard';
 import Image from 'next/image';
+import { calculatePower } from '@/lib/utils/calculatePower';
+import { ItemInterface } from '@/interfaces/item.interface';
 
 interface BattleReport {
   createdAt: string;
@@ -48,17 +50,16 @@ interface BattleReport {
     attackerTotalDamage: number;
     defenderTotalDamage: number;
     crownsDrop: number;
-    xpDrop: number;
+    experienceDrop: number;
     winner: string;
     honourEarned: number;
     honourLost: number;
   };
   attacker: CharacterInterface;
+  items: ItemInterface[];
 }
 
 const Page = ({ params }: { params: { id: string } }) => {
-  const router = useRouter();
-
   const user = useContext(UserContext);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -125,33 +126,55 @@ const Page = ({ params }: { params: { id: string } }) => {
           />
         </p>
         <p className='text-sm px-2 py-1'>
-          <span className='font-semibold'>{attacker.name}</span> has received {battleReport.result.xpDrop} experience.
-        </p>  
+          <span className='font-semibold'>{attacker.name}</span> has received {battleReport.result.experienceDrop} experience.
+        </p>
+        {battleReport.items.length > 0 &&
+          <div className='text-sm px-2 py-1 gap-1'>
+            <p>
+              <span className='font-semibold'>{defender.name}</span>  dropped:
+            </p>
+            {battleReport.items.map((drop) => (
+              <p 
+                className='px-2 flex gap-2 py-1'
+                key={drop._id}
+              >
+                {drop.name}
+                <Image 
+                  className='rounded-sm'
+                  src={`/items/${drop.image}.jpg`}
+                  alt={drop.name}
+                  width={20}
+                  height={20}
+                />
+              </p>
+            ))}
+          </div>
+        }
       </DescriptionCard>
     :
-    <DescriptionCard
-      title='Rewards'
-    >
-      {battleReport.result.winner === attacker.name ?
-      <>
-        <p className='text-sm px-2 py-1 flex items-center gap-1'>
-          <span className='font-semibold'>{attacker.name}</span> earned {battleReport.result.honourEarned} honour. 
-        </p>
-        <p className='text-sm px-2 py-1'>
-          <span className='font-semibold'>{defender.name}</span> has lost {battleReport.result.honourLost * -1} honour.
-        </p>  
-      </>
-      :
-      <>
-        <p className='text-sm px-2 py-1 flex items-center gap-1'>
-          <span className='font-semibold'>{defender.name}</span> earned {battleReport.result.honourEarned} honour. 
-        </p>
-        <p className='text-sm px-2 py-1'>
-          <span className='font-semibold'>{attacker.name}</span> has lost {battleReport.result.honourLost * -1} honour.
-        </p>  
-      </>
-      }
-    </DescriptionCard>
+      <DescriptionCard
+        title='Rewards'
+      >
+        {battleReport.result.winner === attacker.name ?
+        <>
+          <p className='text-sm px-2 py-1 flex items-center gap-1'>
+            <span className='font-semibold'>{attacker.name}</span> earned {battleReport.result.honourEarned} honour. 
+          </p>
+          <p className='text-sm px-2 py-1'>
+            <span className='font-semibold'>{defender.name}</span> has lost {battleReport.result.honourLost * -1} honour.
+          </p>
+        </>
+        :
+        <>
+          <p className='text-sm px-2 py-1 flex items-center gap-1'>
+            <span className='font-semibold'>{defender.name}</span> earned {battleReport.result.honourEarned} honour. 
+          </p>
+          <p className='text-sm px-2 py-1'>
+            <span className='font-semibold'>{attacker.name}</span> has lost {battleReport.result.honourLost * -1} honour.
+          </p>
+        </>
+        }
+      </DescriptionCard>
     
     }
 
@@ -166,7 +189,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           dexterity={attacker.dexterity}
           intelligence={attacker.intelligence}
           charisma={attacker.charisma}
-          power={attacker.power}
+          power={calculatePower(attacker)}
         />
 
         <div className='text-lg text-red3 font-bold items-center flex flex-col'>
@@ -218,18 +241,18 @@ const Page = ({ params }: { params: { id: string } }) => {
       </DescriptionCard>
 
       <div className='w-full info-card'>
-        <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2'>
+        <h2 className='text-md font-semibold border-b-[3px] border-cream2 bg-cream2 px-2 text-brown2'>
           Battle Report
         </h2>
         {battleReport.rounds.map((round, index) => (
           <>
-            <h3 className='text-sm font-semibold border-b-[3px] border-cream2 bg-[#f3d48c] px-2 text-center'>
+            <h3 className='text-sm font-semibold border-b-[3px] border-cream2 bg-[#f3d48c] px-2 text-center text-brown2'>
               Round {index + 1}
             </h3>
             {round.events.map((event, index) => (
               <p
                 key={`${event}-${index}`}
-                className={`${index === 1 || index === 3 ? 'bg-cream' : 'bg-[#dbc389]'} text-sm p-2`}
+                className={`${index === 1 || index === 3 ? 'bg-cream' : 'bg-[#dbc389]'} text-sm p-2 text-brown2`}
               >
                 {event}
               </p>
