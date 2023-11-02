@@ -20,7 +20,7 @@ const Modal = ({ isOpen, onClose, children, nextFunction, title, nextButtonText 
   }
 
   return (
-    <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50'>
+    <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-[999]'>
       <div className='w-80'>
         <DescriptionCard title={title} rounded={true}>
           {children}
